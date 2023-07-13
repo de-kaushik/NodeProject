@@ -33,4 +33,7 @@ module.exports = {
     return null;
   },
 
+  getMatchesByDate: (date) => matchesData.filter(match => match.date === date),
+
+
 };

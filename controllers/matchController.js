@@ -45,5 +45,11 @@ module.exports = {
     }
   },
 
+  getMatchesByDate: (req, res) => {
+    const requestedDate = req.params.date;
+    const matchesOnDate = matchModel.getMatchesByDate(requestedDate);
+    res.json(matchesOnDate);
+  },
+
  };
 

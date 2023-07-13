@@ -1,5 +1,5 @@
 const teamModel = require('../models/teamModel');
-// const playerModel = require('../models/playerModel');
+const playerModel = require('../models/playerModel');
 
 module.exports = {
   getAllTeams: (req, res) => {
@@ -44,9 +44,21 @@ module.exports = {
     }
   },
 
-  // getTeamPlayers: (req, res) => {
-  //   const teamId = parseInt(req.params.id);
-  //   const players = playerModel.getPlayersByTeam(teamId);
-  //   res.json(players);
-  // },
+  getTeamPlayers: (req, res) => {
+    const teamId = parseInt(req.params.id);
+    const players = playerModel.getPlayersByTeam(teamId);
+    res.json(players);
+  },
+
+  getTopScorersByTeam: (req, res) => {
+    const teamId = parseInt(req.params.id);
+    const topScorers = playerModel.getTopScorersByTeam(teamId);
+    res.json(topScorers);
+  },
+
+  getTopWicketTakersByTeam: (req, res) => {
+    const teamId = parseInt(req.params.id);
+    const topWicketTakers = playerModel.getTopWicketTakersByTeam(teamId);
+    res.json(topWicketTakers);
+  },
 };
