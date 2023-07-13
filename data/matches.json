@@ -1,4 +1,4 @@
 [
-    { "id": 1, "team1": "Team A", "team2": "Team B", "date": "2023-07-15" },
-    { "id": 2, "team1": "Team C", "team2": "Team D", "date": "2023-07-16" }
-  ]
+  { "id": 1, "team1": "Team A", "team2": "Team B", "date": "2023-07-15" },
+  { "id": 2, "team1": "Team C", "team2": "Team D", "date": "2023-07-16" }
+]
