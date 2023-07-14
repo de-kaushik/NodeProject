@@ -1,16 +1,14 @@
-const matchModel = require('../models/matchModel');
-// const teamModel = require('../models/teamModel');
-// const playerModel = require('../models/playerModel');
+const matchService = require('../services/matchService');
 
 module.exports = {
   getAllMatches: (req, res) => {
-    const matches = matchModel.getAllMatches();
+    const matches = matchService.getAllMatches();
     res.json(matches);
   },
 
   getMatchById: (req, res) => {
     const matchId = parseInt(req.params.id);
-    const match = matchModel.getMatchById(matchId);
+    const match = matchService.getMatchById(matchId);
     if (match) {
       res.json(match);
     } else {
@@ -20,14 +18,14 @@ module.exports = {
 
   createMatch: (req, res) => {
     const newMatch = req.body;
-    const createdMatch = matchModel.createMatch(newMatch);
+    const createdMatch = matchService.createMatch(newMatch);
     res.status(201).json(createdMatch);
   },
 
   updateMatch: (req, res) => {
     const matchId = parseInt(req.params.id);
     const updatedMatch = req.body;
-    const match = matchModel.updateMatch(matchId, updatedMatch);
+    const match = matchService.updateMatch(matchId, updatedMatch);
     if (match) {
       res.json(match);
     } else {
@@ -37,7 +35,7 @@ module.exports = {
 
   deleteMatch: (req, res) => {
     const matchId = parseInt(req.params.id);
-    const deletedMatch = matchModel.deleteMatch(matchId);
+    const deletedMatch = matchService.deleteMatch(matchId);
     if (deletedMatch) {
       res.sendStatus(204);
     } else {
@@ -47,7 +45,7 @@ module.exports = {
 
   getMatchesByDate: (req, res) => {
     const requestedDate = req.params.date;
-    const matchesOnDate = matchModel.getMatchesByDate(requestedDate);
+    const matchesOnDate = matchService.getMatchesByDate(requestedDate);
     res.json(matchesOnDate);
   },
 
